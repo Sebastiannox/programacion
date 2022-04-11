@@ -1,0 +1,52 @@
+{# tutorial/templates/tutorial/index.html #}
+{% load render_table from django_tables2 %}
+<!doctype html>
+<html>
+    <head>
+        <title>agendas</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Doctor</th>
+                <th>Paciente</th>
+                <th>Fecha</th>
+                <th>Hora inicio</th>
+                <th>Hora termino</th>
+            </tr>
+            <tr>
+                {% for agenda in agenda_list %}
+                <td>{{agenda.doc_rut}}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    <table>
+        <tr>
+            <th>Lúnes</th>
+            <th>Mártes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+        </tr>
+        <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+            <td>11:00</td>
+            <td>11:30</td>
+            <td>12:00</td>
+            <td>12:30</td>
+            <td>13:00</td>
+            <td>13:30</td>
+            <td>14:00</td>
+            <td>14:30</td>
+            <td>15:00</td>
+        </tr>
+    </table>
+    </body>
+</html>
