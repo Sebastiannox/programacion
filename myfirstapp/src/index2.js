@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM, { render } from 'react-dom'
 const container = document.getElementById('root');
+const numbers = [1,2,3,4,5];
+const doubled = numbers.map((numbers) => numbers * 2);
+console.log(doubled);
 class LoginControl extends React.Component {
     constructor(props) {
       super(props);
