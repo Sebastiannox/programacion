@@ -4,6 +4,7 @@
 //container.appendChild(element)
 import React from "react";
 import ReactDOM, { render } from "react-dom";
+import {ListPaddockManagerIds, ListPaddockManagersByName} from "./index2";
 const container = document.getElementById("root"); //estas llamando a un elemento html de unan pagina html por su id, en este caso, un container
 //const user = {
 //firstName: 'sebastian',
@@ -24,16 +25,208 @@ const container = document.getElementById("root"); //estas llamando a un element
 //function Deprueba(props) {
 //return <h1>se recibe el props {props.name}</h1>
 //}
+/*
+const paddockManagers = [
+  { id: 1, taxNumber: "132254524", name: "JUAN TAPIA BURGOS" },
+  { id: 2, taxNumber: "143618668", name: "EFRAIN SOTO VERA" },
+  { id: 3, taxNumber: "78903228", name: "CARLOS PEREZ GONZALEZ" },
+  { id: 4, taxNumber: "176812737", name: "ANDRES VIÑALES CIENFUEGOS" },
+  { id: 5, taxNumber: "216352696", name: "OSCAR PEREZ ZUÑIGA" },
+  { id: 6, taxNumber: "78684747", name: "JOAQUIN ANDRADE SANDOVAL" },
+];
+const paddockType = [
+  { id: 1, name: "PALTOS" },
+  { id: 2, name: "AVELLANOS" },
+  { id: 3, name: "CEREZAS" },
+  { id: 4, name: "NOGALES" },
+];
+
+const farms = [
+  { id: 1, name: "AGRICOLA SANTA ANA" },
+  { id: 2, name: "VINA SANTA PAULA" },
+  { id: 3, name: "FORESTAL Y AGRICOLA LO ENCINA" },
+];
+const paddocks = [
+  {
+    paddockManagerId: 6,
+    farmId: 1,
+    paddockTypeId: 1,
+    harvestYear: 2019,
+    area: 1200,
+  },
+  {
+    paddockManagerId: 1,
+    farmId: 3,
+    paddockTypeId: 4,
+    harvestYear: 2019,
+    area: 500,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 3,
+    paddockTypeId: 2,
+    harvestYear: 2020,
+    area: 20000,
+  },
+  {
+    paddockManagerId: 2,
+    farmId: 2,
+    paddockTypeId: 3,
+    harvestYear: 2021,
+    area: 8401,
+  },
+  {
+    paddockManagerId: 3,
+    farmId: 1,
+    paddockTypeId: 1,
+    harvestYear: 2020,
+    area: 2877,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 2,
+    paddockTypeId: 2,
+    harvestYear: 2017,
+    area: 15902,
+  },
+  {
+    paddockManagerId: 3,
+    farmId: 3,
+    paddockTypeId: 2,
+    harvestYear: 2018,
+    area: 1736,
+  },
+  {
+    paddockManagerId: 2,
+    farmId: 3,
+    paddockTypeId: 3,
+    harvestYear: 2020,
+    area: 2965,
+  },
+  {
+    paddockManagerId: 4,
+    farmId: 3,
+    paddockTypeId: 4,
+    harvestYear: 2018,
+    area: 1651,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 1,
+    paddockTypeId: 1,
+    harvestYear: 2018,
+    area: 700,
+  },
+  {
+    paddockManagerId: 1,
+    farmId: 2,
+    paddockTypeId: 1,
+    harvestYear: 2019,
+    area: 7956,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 3,
+    paddockTypeId: 2,
+    harvestYear: 2020,
+    area: 3745,
+  },
+  {
+    paddockManagerId: 6,
+    farmId: 1,
+    paddockTypeId: 3,
+    harvestYear: 2021,
+    area: 11362,
+  },
+  {
+    paddockManagerId: 2,
+    farmId: 3,
+    paddockTypeId: 3,
+    harvestYear: 2021,
+    area: 300,
+  },
+  {
+    paddockManagerId: 3,
+    farmId: 2,
+    paddockTypeId: 2,
+    harvestYear: 2020,
+    area: 19188,
+  },
+  {
+    paddockManagerId: 3,
+    farmId: 1,
+    paddockTypeId: 1,
+    harvestYear: 2019,
+    area: 17137,
+  },
+  {
+    paddockManagerId: 4,
+    farmId: 3,
+    paddockTypeId: 2,
+    harvestYear: 2020,
+    area: 100,
+  },
+  {
+    paddockManagerId: 2,
+    farmId: 1,
+    paddockTypeId: 3,
+    harvestYear: 2019,
+    area: 11845,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 2,
+    paddockTypeId: 1,
+    harvestYear: 2018,
+    area: 15969,
+  },
+  {
+    paddockManagerId: 1,
+    farmId: 3,
+    paddockTypeId: 1,
+    harvestYear: 2029,
+    area: 10420,
+  },
+  {
+    paddockManagerId: 5,
+    farmId: 2,
+    paddockTypeId: 3,
+    harvestYear: 2010,
+    area: 3200,
+  },
+  {
+    paddockManagerId: 6,
+    farmId: 1,
+    paddockTypeId: 2,
+    harvestYear: 2012,
+    area: 10587,
+  },
+  {
+    paddockManagerId: 2,
+    farmId: 2,
+    paddockTypeId: 2,
+    harvestYear: 2018,
+    area: 16750,
+  },
+];
+
+function ListPaddockManagerIds() {
+  return paddockManagers.map((paddockManager) => paddockManager.id);
+};
+*/
 function FormattedDate(props) {
   return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
 } //este componente recibiría date en sus props y no sabrá si vino del del estado de Clock, los props de Clock o se definion manualmente
 function WarningBanner(props) {
   if (!props.warn) {
     return null;
-  }else{
-    return <div className="warning">Warning!</div>;
+  } else {
+    return (
+      <div className="warning" style={{ backgound_color: "red" }}>
+        Warning!
+      </div>
+    );
   }
-  
 }
 class Toggle extends React.Component {
   constructor(props) {
@@ -44,7 +237,7 @@ class Toggle extends React.Component {
   }
   handleClick() {
     this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn
+      isToggleOn: !prevState.isToggleOn,
     }));
   }
   render() {
@@ -172,6 +365,9 @@ class Clock extends React.Component {
         <FormattedDate date={this.state.date} />
         <LoginControl />
         <MailBox unreadMessages={messages} />
+        <ListPaddockManagerIds/>
+        <br/>
+        <ListPaddockManagersByName/>
       </div>
     ); //de donde recibió el date?? del estado Clock? de las props de Clock?? se definió localmente?? el componente jamás lo sabrá :)
   }
